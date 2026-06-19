@@ -37,46 +37,66 @@
     <script src="../build/JSAV.js"></script>
     <script>
     var jsav = new JSAV("av");
-    var bt = jsav.ds.binarytree();
+    var tr=jsav.ds.tree();
+    var oroot=tr.root();
+    oroot.hide();
+    var rt1=tr.newNode("1");
+    var rt2=tr.newNode("2");
+    var rt3=tr.newNode("3");
+    oroot.addChild(rt1);
+    oroot.addChild(rt2);
+    // oroot.addChild(rt3);
+    tr.layout();
     jsav.step();
-    bt.root("ki"); // set the value of the root
-    bt.layout(); // ..update layout
-    jsav.step(); // add new step
+    rt1.addChild("4").addChild("5").addChild("6");
+    rt2.addChild("7").addChild("8").addChild("9");
+    rt3.addChild("10").addChild("11").addChild("12");
+    tr.layout();
+    jsav.step();
+    // rt3.remove({hide:false});
+    oroot.child(3,rt3)
+    tr.layout();
+    jsav.step();
+    // var bt = jsav.ds.binarytree();
+    // jsav.step();
+    // bt.root("ki"); // set the value of the root
+    // bt.layout(); // ..update layout
+    // jsav.step(); // add new step
     
-    bt.root().css({"background-color": "yellow"}); //highlight root
-    bt.root().left("3"); // set left child
-    bt.layout(); //..layout
-    jsav.step();
+    // bt.root().css({"background-color": "yellow"}); //highlight root
+    // bt.root().left("3"); // set left child
+    // bt.layout(); //..layout
+    // jsav.step();
     
-    var right = bt.root().right("4"); // set right, store reference
-    bt.layout();
-    jsav.step();
+    // var right = bt.root().right("4"); // set right, store reference
+    // bt.layout();
+    // jsav.step();
     
-    right.left("4L"); // set left child of 4
-    bt.layout();
-    jsav.step();
+    // right.left("4L"); // set left child of 4
+    // bt.layout();
+    // jsav.step();
     
-    bt.root().left().left("3L").parent().right("3R"); // chaining, set left and right of 3
-    bt.layout();
-    jsav.step();
+    // bt.root().left().left("3L").parent().right("3R"); // chaining, set left and right of 3
+    // bt.layout();
+    // jsav.step();
 
-    var node = bt.newNode("4R");
-    node.css({"color": "red", "top": right.css("top"), "left": parseInt(right.css("left"), 10) + 60});
-    jsav.step();
+    // var node = bt.newNode("4R");
+    // node.css({"color": "red", "top": right.css("top"), "left": parseInt(right.css("left"), 10) + 60});
+    // jsav.step();
     
-    right.right(node);
-    bt.layout();
+    // right.right(node);
+    // bt.layout();
     
     jsav.recorded(); // done recording changes, will rewind
     
     
     
-    $(".jsavtreenode").live("hover", function() {
-      //console.log($(this).text(), $(this).offset().left, $(this).offset().top);
-    });
-    $("path").live("hover", function() {
-      //console.log($(this).attr("d"));
-    });
+    // $(".jsavtreenode").live("hover", function() {
+    //   //console.log($(this).text(), $(this).offset().left, $(this).offset().top);
+    // });
+    // $("path").live("hover", function() {
+    //   //console.log($(this).attr("d"));
+    // });
     </script>
   </body>
 </html>

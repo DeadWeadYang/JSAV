@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Trace Static All-in-One</title>
+    <link rel="stylesheet" href="../css/JSAV.css" type="text/css" />
+    <style>
+      body {
+        font-family: Consolas, "Courier New", monospace;
+        margin: 12px;
+      }
+      #toolbar {
+        margin-bottom: 10px;
+      }
+      #av {
+        position: relative;
+        min-height: 560px;
+        border: 1px solid #ddd;
+      }
+      .hint {
+        color: #666;
+        margin: 6px 0 10px 0;
+      }
+      select,
+      button {
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Trace Static All-in-One</h2>
+    <div id="toolbar">
+      <label for="demoSelect">Demo:</label>
+      <select id="demoSelect">
+        <option value="sorting">Sorting (QuickSort)</option>
+        <option value="btree">Binary Tree</option>
+        <option value="dsu">DSU</option>
+        <option value="heap">Binary Heap</option>
+        <option value="huffman">Huffman</option>
+        <option value="graph">Graph Algorithms</option>
+        <option value="showcase" selected>Showcase All</option>
+      </select>
+      <button id="reloadBtn">Load</button>
+    </div>
+    <div class="hint">同一页面切换查看当前已导出的静态可视化；Showcase All 包含 graph/tree/sorting 和 KMP 字符串匹配。</div>
+    <div id="av"></div>
+
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/jquery-ui.min.js"></script>
+    <script src="../lib/jquery.transit.js"></script>
+    <script src="../lib/raphael.js"></script>
+    <script src="../lib/dagre.min.js"></script>
+    <script src="../build/JSAV.js"></script>
+    <script src="../ext/bug_fix.js"></script>
+    <script src="../ext/binary_tree_rotation.js"></script>
+    <script>
+      (function () {
+        var mapping = {
+          sorting: "./sorting-trace-static.js",
+          btree: "./btree-trace-static.js",
+          dsu: "./dsu-trace-static.js",
+          heap: "./heap-trace-static.js",
+          huffman: "./huffman-trace-static.js",
+          graph: "./graph-trace-static.js",
+          showcase: "./trace-showcase-static.js"
+        };
+
+        function clearAv() {
+          var av = document.getElementById("av");
+          av.innerHTML = "";
+        }
+
+        function removeOldStaticScript() {
+          var old = document.getElementById("__trace_static_script__");
+          if (old && old.parentNode) old.parentNode.removeChild(old);
+        }
+
+        function loadSelected() {
+          var key = document.getElementById("demoSelect").value;
+          var src = mapping[key];
+          clearAv();
+          removeOldStaticScript();
+          var s = document.createElement("script");
+          s.id = "__trace_static_script__";
+          s.src = src + "?t=" + Date.now();
+          document.body.appendChild(s);
+        }
+
+        document.getElementById("reloadBtn").addEventListener("click", loadSelected);
+        document.getElementById("demoSelect").addEventListener("change", loadSelected);
+        loadSelected();
+      })();
+    </script>
+  </body>
+</html>

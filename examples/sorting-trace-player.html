@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sorting Trace Player</title>
+    <link rel="stylesheet" href="../css/JSAV.css" type="text/css" />
+    <style>
+      #av {
+        width: 98%;
+        position: relative;
+      }
+      .jsavcounter {
+        position: absolute;
+        top: 15px;
+      }
+      #toolbar {
+        margin: 8px 0;
+      }
+      #traceInput {
+        width: 100%;
+        min-height: 180px;
+        font-family: Consolas, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sorting Trace Player</h1>
+    <div id="toolbar">
+      <button id="loadDemo">Load Demo</button>
+      <button id="play">Play Trace</button>
+      <p>Paste UTF-8 JSONL trace below.</p>
+    </div>
+    <textarea id="traceInput"></textarea>
+    <div id="av">
+      <div class="jsavcontrols"></div><span class="jsavcounter"></span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../lib/jquery.transit.js"></script>
+    <script src="../lib/raphael.js"></script>
+    <script src="../build/JSAV.js"></script>
+    <script src="../ext/sorting_trace_player.js"></script>
+    <script>
+      // var demoText = [
+      //   '{"seq":1,"ds":"array","op":"init","obj":"A","args":{"values":[7,3,5,1,4]},"step":false,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":2,"ds":"array","op":"init","obj":"B","args":{"values":["_","_","_","_","_"]},"step":false,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":3,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":5},"step":true,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":4,"ds":"array","op":"swap","obj":"A","args":{"i":0,"j":3},"step":true,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":5,"ds":"array","op":"set","obj":"B","args":{"i":0,"v":44},"step":true,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":6,"ds":"array","op":"set","obj":"B","args":{"i":1,"v":55},"step":true,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":7,"ds":"array","op":"set","obj":"A","args":{"i":0,"v":66},"step":true,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":8,"ds":"array","op":"set","obj":"A","args":{"i":1,"v":77},"step":true,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //   '{"seq":9,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":3},"step":true,"loc":{"file":"demo.cpp","line":1,"func":"main"}}',
+      //  ].join("\n");
+
+      function playTrace(traceText) {
+        // var events = parseSortingTraceJSONL(traceText);
+        var events=[{"seq":1,"ds":"array","op":"init","obj":"A","args":{"values":[1,3,2,4]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":346,"func":"QuickSort"}},
+{"seq":2,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":4},"step":true,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":348,"func":"QuickSort"}},
+{"seq":3,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":4},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":287,"func":"Partition"}},
+{"seq":4,"ds":"array","op":"mark","obj":"A","args":{"indices":[2]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":291,"func":"Partition"}},
+{"seq":5,"ds":"array","op":"mark","obj":"A","args":{"indices":[1]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":304,"func":"Partition"}},
+{"seq":6,"ds":"array","op":"mark","obj":"A","args":{"indices":[2]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":305,"func":"Partition"}},
+{"seq":7,"ds":"array","op":"swap","obj":"A","args":{"i":1,"j":2},"step":true,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":307,"func":"Partition"}},
+{"seq":8,"ds":"array","op":"unmark","obj":"A","args":{"indices":[1]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":308,"func":"Partition"}},
+{"seq":9,"ds":"array","op":"unmark","obj":"A","args":{"indices":[2]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":309,"func":"Partition"}},
+{"seq":10,"ds":"array","op":"unmark","obj":"A","args":{"indices":[2]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":314,"func":"Partition"}},
+{"seq":11,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":2},"step":true,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":348,"func":"QuickSort"}},
+{"seq":12,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":2},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":287,"func":"Partition"}},
+{"seq":13,"ds":"array","op":"mark","obj":"A","args":{"indices":[1]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":291,"func":"Partition"}},
+{"seq":14,"ds":"array","op":"unmark","obj":"A","args":{"indices":[1]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":314,"func":"Partition"}},
+{"seq":15,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":2},"step":true,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":353,"func":"QuickSort"}},
+{"seq":16,"ds":"array","op":"focus","obj":"A","args":{"l":2,"r":4},"step":true,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":348,"func":"QuickSort"}},
+{"seq":17,"ds":"array","op":"focus","obj":"A","args":{"l":2,"r":4},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":287,"func":"Partition"}},
+{"seq":18,"ds":"array","op":"mark","obj":"A","args":{"indices":[3]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":291,"func":"Partition"}},
+{"seq":19,"ds":"array","op":"unmark","obj":"A","args":{"indices":[3]},"step":false,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":314,"func":"Partition"}},
+{"seq":20,"ds":"array","op":"focus","obj":"A","args":{"l":2,"r":4},"step":true,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":353,"func":"QuickSort"}},
+{"seq":21,"ds":"array","op":"focus","obj":"A","args":{"l":0,"r":4},"step":true,"loc":{"file":"C:\\D\\CODE\\DSAVisual\\CPP-DSA/sorting/sorting.hpp","line":353,"func":"QuickSort"}},
+];
+        var jsav = new JSAV("av");
+        playSortingTrace(jsav, events);
+      }
+
+      $("#loadDemo").on("click", function () {
+        $("#traceInput").val(demoText);
+      });
+
+      $("#play").on("click", function () {
+        try {
+          playTrace($("#traceInput").val());
+        } catch (e) {
+          alert(e.message);
+        }
+      });
+
+      $("#traceInput").val(demoText);
+    </script>
+  </body>
+</html>

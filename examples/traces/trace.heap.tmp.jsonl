@@ -1,0 +1,162 @@
+{"seq":1,"ctx":"binary_heap_case","ds":"array","op":"init","obj":"HA","args":{"values":[]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":132,"func":"vis_ensure_init"}}
+{"seq":2,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":133,"func":"vis_ensure_init"}}
+{"seq":3,"ctx":"binary_heap_case","ds":"btree","op":"init","obj":"HT","args":{"nodes":[]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":134,"func":"vis_ensure_init"}}
+{"seq":4,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 5 放到末尾 idx=0，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":5,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n1","value":"i=0","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":6,"ctx":"binary_heap_case","ds":"btree","op":"set_root","obj":"HT","args":{"id":"n1"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":156,"func":"vis_add_index"}}
+{"seq":7,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[5]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":8,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=0"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":9,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":10,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 1 放到末尾 idx=1，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":11,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n2","value":"i=1","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":12,"ctx":"binary_heap_case","ds":"btree","op":"link","obj":"HT","args":{"parent":"n1","side":"left","child":"n2"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":158,"func":"vis_add_index"}}
+{"seq":13,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[5,1]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":14,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":15,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":16,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 8 放到末尾 idx=2，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":17,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n3","value":"i=2","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":18,"ctx":"binary_heap_case","ds":"btree","op":"link","obj":"HT","args":{"parent":"n1","side":"right","child":"n3"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":158,"func":"vis_add_index"}}
+{"seq":19,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[5,1,8]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":20,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=2"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":21,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":22,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":23,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":2},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":24,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=8"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":25,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n3","note":"v=5"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":26,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":27,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":28,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"上浮交换：idx 2 与父节点 0"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":210,"func":"adjustUp"}}
+{"seq":29,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":30,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 3 放到末尾 idx=3，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":31,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n4","value":"i=3","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":32,"ctx":"binary_heap_case","ds":"btree","op":"link","obj":"HT","args":{"parent":"n2","side":"left","child":"n4"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":158,"func":"vis_add_index"}}
+{"seq":33,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[8,1,5,3]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":34,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=3"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":35,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[1]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":36,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[3]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":37,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":1,"j":3},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":38,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n2","note":"v=3"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":39,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n4","note":"v=1"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":40,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[1]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":41,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[3]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":42,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"上浮交换：idx 3 与父节点 1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":210,"func":"adjustUp"}}
+{"seq":43,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":44,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 7 放到末尾 idx=4，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":45,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n5","value":"i=4","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":46,"ctx":"binary_heap_case","ds":"btree","op":"link","obj":"HT","args":{"parent":"n2","side":"right","child":"n5"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":158,"func":"vis_add_index"}}
+{"seq":47,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[8,3,5,1,7]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":48,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=4"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":49,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[1]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":50,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[4]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":51,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":1,"j":4},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":52,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n2","note":"v=7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":53,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n5","note":"v=3"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":54,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[1]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":55,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[4]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":56,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"上浮交换：idx 4 与父节点 1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":210,"func":"adjustUp"}}
+{"seq":57,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":58,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 2 放到末尾 idx=5，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":59,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n6","value":"i=5","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":60,"ctx":"binary_heap_case","ds":"btree","op":"link","obj":"HT","args":{"parent":"n3","side":"left","child":"n6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":158,"func":"vis_add_index"}}
+{"seq":61,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[8,7,5,1,3,2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":62,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=5"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":63,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":64,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 6 放到末尾 idx=6，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":65,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n7","value":"i=6","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":66,"ctx":"binary_heap_case","ds":"btree","op":"link","obj":"HT","args":{"parent":"n3","side":"right","child":"n7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":158,"func":"vis_add_index"}}
+{"seq":67,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[8,7,5,1,3,2,6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":68,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=6"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":69,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":70,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":71,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":2,"j":6},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":72,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n3","note":"v=6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":73,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n7","note":"v=5"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":74,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":75,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":76,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"上浮交换：idx 6 与父节点 2"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":210,"func":"adjustUp"}}
+{"seq":77,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":78,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆弹出堆顶：8"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":77,"func":"pop"}}
+{"seq":79,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":80,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":81,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":6},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":82,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=5"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":83,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n7","note":"v=8"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":84,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":85,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":86,"ctx":"binary_heap_case","ds":"btree","op":"remove_node","obj":"HT","args":{"id":"n7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":177,"func":"vis_remove_last_index"}}
+{"seq":87,"ctx":"binary_heap_case","ds":"btree","op":"destroy_node","obj":"HT","args":{"id":"n7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":178,"func":"vis_remove_last_index"}}
+{"seq":88,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[5,7,6,1,3,2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":89,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始下沉：idx=0"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":225,"func":"adjustDown"}}
+{"seq":90,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":91,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[1]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":92,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":1},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":93,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":94,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n2","note":"v=5"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":95,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":96,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[1]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":97,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"下沉交换：idx 0 与孩子 1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":238,"func":"adjustDown"}}
+{"seq":98,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆弹出完成：下沉结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":93,"func":"pop"}}
+{"seq":99,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入：新元素 9 放到末尾 idx=6，堆大小 +1"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":51,"func":"push"}}
+{"seq":100,"ctx":"binary_heap_case","ds":"btree","op":"new_node","obj":"HT","args":{"id":"n7","value":"i=6","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":154,"func":"vis_add_index"}}
+{"seq":101,"ctx":"binary_heap_case","ds":"btree","op":"link","obj":"HT","args":{"parent":"n3","side":"right","child":"n7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":158,"func":"vis_add_index"}}
+{"seq":102,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[7,5,6,1,3,2,9]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":103,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始上浮：idx=6"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":205,"func":"adjustUp"}}
+{"seq":104,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":105,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":106,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":2,"j":6},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":107,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n3","note":"v=9"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":108,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n7","note":"v=6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":109,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":110,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":111,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"上浮交换：idx 6 与父节点 2"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":210,"func":"adjustUp"}}
+{"seq":112,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":113,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":114,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":2},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":115,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=9"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":116,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n3","note":"v=7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":117,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":118,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":119,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"上浮交换：idx 2 与父节点 0"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":210,"func":"adjustUp"}}
+{"seq":120,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆插入完成：上浮结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":62,"func":"push"}}
+{"seq":121,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆弹出堆顶：9"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":77,"func":"pop"}}
+{"seq":122,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":123,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":124,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":6},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":125,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":126,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n7","note":"v=9"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":127,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":128,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[6]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":129,"ctx":"binary_heap_case","ds":"btree","op":"remove_node","obj":"HT","args":{"id":"n7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":177,"func":"vis_remove_last_index"}}
+{"seq":130,"ctx":"binary_heap_case","ds":"btree","op":"destroy_node","obj":"HT","args":{"id":"n7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":178,"func":"vis_remove_last_index"}}
+{"seq":131,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[6,5,7,1,3,2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":132,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始下沉：idx=0"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":225,"func":"adjustDown"}}
+{"seq":133,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":134,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":135,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":2},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":136,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":137,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n3","note":"v=6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":138,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":139,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":140,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"下沉交换：idx 0 与孩子 2"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":238,"func":"adjustDown"}}
+{"seq":141,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆弹出完成：下沉结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":93,"func":"pop"}}
+{"seq":142,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆弹出堆顶：7"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":77,"func":"pop"}}
+{"seq":143,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":144,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[5]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":145,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":5},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":146,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=2"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":147,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n6","note":"v=7"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":148,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":149,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[5]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":150,"ctx":"binary_heap_case","ds":"btree","op":"remove_node","obj":"HT","args":{"id":"n6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":177,"func":"vis_remove_last_index"}}
+{"seq":151,"ctx":"binary_heap_case","ds":"btree","op":"destroy_node","obj":"HT","args":{"id":"n6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":178,"func":"vis_remove_last_index"}}
+{"seq":152,"ctx":"binary_heap_case","ds":"array","op":"rebuild","obj":"HA","args":{"values":[2,5,6,1,3]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":142,"func":"vis_rebuild_array"}}
+{"seq":153,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"开始下沉：idx=0"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":225,"func":"adjustDown"}}
+{"seq":154,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":186,"func":"swap_indices"}}
+{"seq":155,"ctx":"binary_heap_case","ds":"array","op":"mark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":187,"func":"swap_indices"}}
+{"seq":156,"ctx":"binary_heap_case","ds":"array","op":"swap","obj":"HA","args":{"i":0,"j":2},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":189,"func":"swap_indices"}}
+{"seq":157,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n1","note":"v=6"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":158,"ctx":"binary_heap_case","ds":"btree","op":"set_note","obj":"HT","args":{"id":"n3","note":"v=2"},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":168,"func":"vis_refresh_index"}}
+{"seq":159,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[0]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":192,"func":"swap_indices"}}
+{"seq":160,"ctx":"binary_heap_case","ds":"array","op":"unmark","obj":"HA","args":{"indices":[2]},"step":false,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":193,"func":"swap_indices"}}
+{"seq":161,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"下沉交换：idx 0 与孩子 2"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":238,"func":"adjustDown"}}
+{"seq":162,"ctx":"binary_heap_case","ds":"meta","op":"msg","obj":"_","args":{"text":"堆弹出完成：下沉结束"},"step":true,"loc":{"file":"CPP-DSA/tree/heap/binary_heap.hpp","line":93,"func":"pop"}}

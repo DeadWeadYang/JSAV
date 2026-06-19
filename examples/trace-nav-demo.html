@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DS Trace Nav Demo</title>
+    <link rel="stylesheet" href="../css/JSAV.css" type="text/css" />
+    <style>
+      body {
+        margin: 12px;
+        font-family: Consolas, "Courier New", monospace;
+      }
+      #toolbar {
+        margin-bottom: 8px;
+      }
+      #status {
+        margin-left: 10px;
+        color: #334155;
+      }
+      #traceInput {
+        width: 100%;
+        height: 160px;
+        box-sizing: border-box;
+      }
+      #layout {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      #left {
+        flex: 3;
+        min-width: 0;
+      }
+      #right {
+        flex: 2;
+        min-width: 360px;
+        border: 1px solid #d4d4d8;
+        padding: 8px;
+        background: #fafafa;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      #av {
+        position: relative;
+        min-height: 560px;
+        border: 1px solid #d4d4d8;
+        background: #fff;
+        padding: 8px;
+      }
+      .dstrace-context-panel {
+        border: 1px solid #e4e4e7;
+        margin: 10px 0;
+        padding: 8px;
+      }
+      .dstrace-context-title {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .jsavcounter {
+        position: absolute;
+        top: 10px;
+      }
+      #navHeader {
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      #navMeta {
+        margin-bottom: 8px;
+        font-size: 13px;
+        color: #334155;
+      }
+      #navList {
+        max-height: 220px;
+        overflow: auto;
+        border: 1px solid #e4e4e7;
+        background: #fff;
+        padding: 6px;
+      }
+      .frame-item {
+        border: 1px solid #e4e4e7;
+        margin-bottom: 6px;
+        padding: 6px;
+      }
+      .frame-item.active {
+        border-color: #2563eb;
+        background: #eff6ff;
+      }
+      .frame-title {
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .mono {
+        white-space: pre-wrap;
+        word-break: break-all;
+        font-size: 12px;
+      }
+      #codeHeader {
+        font-weight: 700;
+      }
+      #codeMeta {
+        font-size: 12px;
+        color: #334155;
+      }
+      #codeView {
+        border: 1px solid #e4e4e7;
+        background: #ffffff;
+        padding: 8px;
+        overflow: auto;
+        max-height: 420px;
+      }
+      .code-line {
+        white-space: pre;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+      .code-line-hit {
+        background: #fff7cc;
+      }
+      .code-line-primary {
+        background: #dbeafe;
+      }
+      .code-ln {
+        display: inline-block;
+        width: 56px;
+        color: #64748b;
+        user-select: none;
+      }
+      .ctx-tracker {
+        margin-top: 8px;
+        border: 1px solid #cbd5e1;
+        background: #f8fafc;
+        padding: 6px;
+      }
+      .ctx-tracker-title {
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .ctx-tracker-meta {
+        font-size: 12px;
+        color: #334155;
+        margin-bottom: 4px;
+      }
+      .ctx-tracker-code {
+        max-height: 220px;
+        overflow: auto;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        padding: 6px;
+      }
+      button {
+        margin-right: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>DS Trace Navigation Demo</h2>
+    <div id="toolbar">
+      <button id="loadDefault">Load traces/trace.btree.tmp.jsonl</button>
+      <button id="play">Play + Build StepMap</button>
+      <button id="showStepMap">Refresh StepMap View</button>
+      <span id="status"></span>
+    </div>
+    <textarea id="traceInput" placeholder="Paste JSONL trace here..."></textarea>
+    <div id="layout">
+      <div id="left">
+        <div id="av"></div>
+      </div>
+      <div id="right">
+        <div id="navHeader">Step Navigation Map</div>
+        <div id="navMeta">No step map yet.</div>
+        <div>
+          <button id="prevFrame">Prev Frame</button>
+          <button id="nextFrame">Next Frame</button>
+          <span id="frameStatus"></span>
+        </div>
+        <div id="navList"></div>
+        <div id="codeHeader">C++ Code Trace</div>
+        <div id="codeMeta">No frame selected.</div>
+        <div id="codeView"></div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../lib/jquery.transit.js"></script>
+    <script src="../lib/raphael.js"></script>
+    <script src="../build/JSAV.js"></script>
+    <script src="../ext/bug_fix.js"></script>
+    <script src="../ext/binary_tree_rotation.js"></script>
+    <script src="../ext/ds_trace_player.js"></script>
+    <script>
+      var DEFAULT_TRACE_PATH = "./traces/trace.btree.tmp.jsonl";
+      var SOURCE_PREFIX = "../../";
+      var __frames = [];
+      var __activeFrameIndex = -1;
+      var __sourceCache = {};
+
+      function setStatus(msg) {
+        document.getElementById("status").textContent = msg || "";
+      }
+
+      function loadDefaultTrace() {
+        setStatus("Loading...");
+        return fetch(DEFAULT_TRACE_PATH)
+          .then(function (res) {
+            if (!res.ok) {
+              throw new Error("HTTP " + res.status + " while loading " + DEFAULT_TRACE_PATH);
+            }
+            return res.text();
+          })
+          .then(function (text) {
+            document.getElementById("traceInput").value = text;
+            setStatus("Loaded default trace.");
+          })
+          .catch(function (err) {
+            setStatus("Load failed: " + err.message);
+          });
+      }
+
+      function flattenStepMap(raw) {
+        if (!raw) return [];
+        if (Array.isArray(raw) && raw.length && raw[0] && raw[0].frames) {
+          var rows = [];
+          for (var i = 0; i < raw.length; i++) {
+            var ctxPack = raw[i];
+            var frames = ctxPack.frames || [];
+            for (var j = 0; j < frames.length; j++) {
+              rows.push(frames[j]);
+            }
+          }
+          return rows;
+        }
+        return Array.isArray(raw) ? raw : [];
+      }
+
+      function escHtml(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      function padLeft(n, width) {
+        var s = String(n);
+        while (s.length < width) s = " " + s;
+        return s;
+      }
+
+      function fetchSourceFile(filePath) {
+        if (!filePath) {
+          return Promise.resolve([]);
+        }
+        if (__sourceCache[filePath]) {
+          return Promise.resolve(__sourceCache[filePath]);
+        }
+        return fetch(SOURCE_PREFIX + filePath)
+          .then(function (res) {
+            if (!res.ok) {
+              throw new Error("HTTP " + res.status + " while loading " + filePath);
+            }
+            return res.text();
+          })
+          .then(function (text) {
+            var lines = text.split(/\r?\n/);
+            __sourceCache[filePath] = lines;
+            return lines;
+          });
+      }
+
+      function findFunctionRange(lines, lineNo, funcName) {
+        if (!lines || !lines.length || !lineNo || lineNo < 1 || lineNo > lines.length) {
+          return { start: Math.max(1, lineNo || 1), end: Math.min(lines ? lines.length : 1, (lineNo || 1)), signature: "" };
+        }
+        function findRangeFromBrace(startLine) {
+          var depth = 0;
+          var opened = false;
+          var end = lines.length;
+          for (var x = startLine; x <= lines.length; x++) {
+            var lineText = String(lines[x - 1] || "");
+            for (var ci = 0; ci < lineText.length; ci++) {
+              var ch = lineText[ci];
+              if (ch === "{") {
+                depth++;
+                opened = true;
+              } else if (ch === "}") {
+                depth--;
+                if (opened && depth <= 0) {
+                  end = x;
+                  x = lines.length + 1;
+                  break;
+                }
+              }
+            }
+          }
+          var sig = "";
+          var parts = [];
+          var up = startLine - 1;
+          while (up >= 1) {
+            var t = String(lines[up - 1] || "").trim();
+            if (!t) {
+              if (parts.length) break;
+              up--;
+              continue;
+            }
+            parts.unshift(t);
+            if (t.indexOf("(") !== -1 || t.endsWith(";") || t === "{" || t === "}") {
+              break;
+            }
+            up--;
+          }
+          sig = parts.join(" ");
+          return { start: startLine, end: end, signature: sig };
+        }
+
+        if (funcName) {
+          var escaped = String(funcName).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          var re = new RegExp("\\b" + escaped + "\\s*\\(");
+          var candidates = [];
+          for (var li = 1; li <= lines.length; li++) {
+            var lt = String(lines[li - 1] || "");
+            if (re.test(lt)) {
+              candidates.push(li);
+            }
+          }
+          if (candidates.length) {
+            var best = candidates[0];
+            var bestDist = Math.abs(best - lineNo);
+            for (var ci2 = 0; ci2 < candidates.length; ci2++) {
+              var cand = candidates[ci2];
+              var dist = Math.abs(cand - lineNo);
+              if (cand <= lineNo && dist <= bestDist) {
+                best = cand;
+                bestDist = dist;
+              } else if (best > lineNo && dist < bestDist) {
+                best = cand;
+                bestDist = dist;
+              }
+            }
+            var braceLine = best;
+            var foundBrace = false;
+            for (var fwd = best; fwd <= Math.min(lines.length, best + 40); fwd++) {
+              var ft = String(lines[fwd - 1] || "");
+              if (ft.indexOf("{") !== -1) {
+                braceLine = fwd;
+                foundBrace = true;
+                break;
+              }
+              if (ft.indexOf(";") !== -1 && ft.indexOf("{") === -1) {
+                break;
+              }
+            }
+            if (foundBrace) {
+              return findRangeFromBrace(braceLine);
+            }
+          }
+        }
+
+        var i;
+        var start = lineNo;
+        var signature = "";
+        for (i = lineNo; i >= 1; i--) {
+          var t = String(lines[i - 1] || "");
+          if (t.indexOf("{") !== -1) {
+            start = i;
+            var sigParts = [];
+            var k = i - 1;
+            while (k >= 1) {
+              var s = String(lines[k - 1] || "").trim();
+              if (!s) {
+                if (sigParts.length) break;
+                k--;
+                continue;
+              }
+              sigParts.unshift(s);
+              if (s.indexOf(")") !== -1 || s.indexOf("(") !== -1) break;
+              if (s.endsWith(";")) break;
+              k--;
+            }
+            signature = sigParts.join(" ");
+            break;
+          }
+        }
+        var fallback = findRangeFromBrace(start);
+        if (!fallback.signature) {
+          fallback.signature = signature;
+        }
+        return fallback;
+      }
+
+      function frameForIndex(idx) {
+        if (idx < 0 || idx >= __frames.length) return null;
+        return __frames[idx];
+      }
+
+      function renderCodeForFrame(frame) {
+        var codeMeta = document.getElementById("codeMeta");
+        var codeView = document.getElementById("codeView");
+        if (!frame) {
+          codeMeta.textContent = "No frame selected.";
+          codeView.innerHTML = "";
+          return;
+        }
+        var p = frame.primaryLoc || {};
+        var file = p.file || "";
+        if (!file) {
+          codeMeta.textContent = "Frame has no source file location.";
+          codeView.innerHTML = "";
+          return;
+        }
+        fetchSourceFile(file)
+          .then(function (lines) {
+            var locList = frame.locList || [];
+            var fileLocs = locList.filter(function (x) { return x && x.file === file && typeof x.line === "number"; });
+            var hitSet = {};
+            for (var i = 0; i < fileLocs.length; i++) {
+              hitSet[fileLocs[i].line] = true;
+            }
+            var primaryLine = (typeof p.line === "number") ? p.line : null;
+            var minLine = primaryLine || 1;
+            var maxLine = primaryLine || 1;
+            for (var j = 0; j < fileLocs.length; j++) {
+              if (fileLocs[j].line < minLine) minLine = fileLocs[j].line;
+              if (fileLocs[j].line > maxLine) maxLine = fileLocs[j].line;
+            }
+            var start = Math.max(1, minLine - 8);
+            var end = Math.min(lines.length, maxLine + 8);
+
+            var html = [];
+            for (var ln = start; ln <= end; ln++) {
+              var cls = "code-line";
+              if (hitSet[ln]) cls += " code-line-hit";
+              if (primaryLine === ln) cls += " code-line-primary";
+              var text = lines[ln - 1] != null ? lines[ln - 1] : "";
+              html.push(
+                '<div class="' + cls + '">' +
+                '<span class="code-ln">' + escHtml(padLeft(ln, 4)) + "</span>" +
+                escHtml(text) +
+                "</div>"
+              );
+            }
+            codeMeta.textContent =
+              "file=" + file +
+              " | primary=" + (primaryLine != null ? primaryLine : "?") +
+              " | frame=" + frame.frame +
+              " | reason=" + (frame.reason || "step");
+            codeView.innerHTML = html.join("");
+          })
+          .catch(function (err) {
+            codeMeta.textContent = "Failed to load source: " + file;
+            codeView.textContent = err.message;
+          });
+      }
+
+      function parseCounterCurrent(counterText) {
+        if (!counterText) return 1;
+        var m = String(counterText).match(/^\s*(\d+)/);
+        if (!m) return 1;
+        var n = parseInt(m[1], 10);
+        return isNaN(n) ? 1 : n;
+      }
+
+      function renderCodeInto(frame, codeMetaEl, codeViewEl) {
+        if (!frame) {
+          codeMetaEl.textContent = "No frame selected yet.";
+          codeViewEl.innerHTML = "";
+          return;
+        }
+        var p = frame.primaryLoc || {};
+        var file = p.file || "";
+        if (!file) {
+          codeMetaEl.textContent = "Frame has no source location.";
+          codeViewEl.innerHTML = "";
+          return;
+        }
+        fetchSourceFile(file)
+          .then(function (lines) {
+            var locList = frame.locList || [];
+            var fileLocs = locList.filter(function (x) { return x && x.file === file && typeof x.line === "number"; });
+            var hitSet = {};
+            for (var i = 0; i < fileLocs.length; i++) hitSet[fileLocs[i].line] = true;
+            var primaryLine = (typeof p.line === "number") ? p.line : null;
+            var minLine = primaryLine || 1;
+            var maxLine = primaryLine || 1;
+            for (var j = 0; j < fileLocs.length; j++) {
+              if (fileLocs[j].line < minLine) minLine = fileLocs[j].line;
+              if (fileLocs[j].line > maxLine) maxLine = fileLocs[j].line;
+            }
+            var fn = findFunctionRange(lines, primaryLine || minLine, p.func || "");
+            var start = fn.start;
+            var end = fn.end;
+            var html = [];
+            for (var ln = start; ln <= end; ln++) {
+              var cls = "code-line";
+              if (hitSet[ln]) cls += " code-line-hit";
+              if (primaryLine === ln) cls += " code-line-primary";
+              var text = lines[ln - 1] != null ? lines[ln - 1] : "";
+              html.push(
+                '<div class="' + cls + '">' +
+                '<span class="code-ln">' + escHtml(padLeft(ln, 4)) + "</span>" +
+                escHtml(text) +
+                "</div>"
+              );
+            }
+            codeMetaEl.textContent =
+              "frame=" + frame.frame +
+              " | reason=" + (frame.reason || "step") +
+              " | seq=" + (frame.seqStart != null ? frame.seqStart : "?") + "->" + (frame.seqEnd != null ? frame.seqEnd : "?") +
+              " | " + file + ":" + (primaryLine != null ? primaryLine : "?") +
+              (fn.signature ? " | func: " + fn.signature : "");
+            codeViewEl.innerHTML = html.join("");
+          })
+          .catch(function (err) {
+            codeMetaEl.textContent = "Failed to load source: " + file;
+            codeViewEl.textContent = err.message;
+          });
+      }
+
+      function bindAutoTrackers(rawStepMap) {
+        var ctxPacks = Array.isArray(rawStepMap) ? rawStepMap : [];
+        var panels = document.querySelectorAll("#av .dstrace-context-panel");
+        for (var i = 0; i < panels.length; i++) {
+          var panel = panels[i];
+          var old = panel.querySelector(".ctx-tracker");
+          if (old) old.remove();
+          var body = panel.querySelector("div[id^='dstrace_ctx_']");
+          if (!body) continue;
+          var bodyId = body.id;
+          var pack = ctxPacks[i] || { ctx: "default", frames: [] };
+          var frames = pack.frames || [];
+
+          var tracker = document.createElement("div");
+          tracker.className = "ctx-tracker";
+          var title = document.createElement("div");
+          title.className = "ctx-tracker-title";
+          title.textContent = "Auto Code Trace | ctx=" + (pack.ctx || "default");
+          var meta = document.createElement("div");
+          meta.className = "ctx-tracker-meta";
+          meta.textContent = "Waiting for navigation...";
+          var code = document.createElement("div");
+          code.className = "ctx-tracker-code";
+          tracker.appendChild(title);
+          tracker.appendChild(meta);
+          tracker.appendChild(code);
+          panel.appendChild(tracker);
+
+          (function (targetId, frameList, metaEl, codeEl) {
+            var $target = $("#" + targetId);
+            $target.off(".dstraceNav");
+            function updateByCurrent(current) {
+              var appliedSteps = Math.max(0, (current || 1) - 1);
+              var frameIdx = appliedSteps - 1;
+              if (frameIdx < 0 || frameIdx >= frameList.length) {
+                metaEl.textContent = "current=" + current + " | initial state (no frame yet)";
+                codeEl.innerHTML = "";
+                return;
+              }
+              var frame = frameList[frameIdx];
+              renderCodeInto(frame, metaEl, codeEl);
+            }
+            $target.on("jsav-updatecounter.dstraceNav", function (evt, current, total) {
+              updateByCurrent(current);
+            });
+            // initial sync from existing counter text
+            var counterText = $target.find(".jsavcounter").first().text();
+            var initCurrent = parseCounterCurrent(counterText);
+            updateByCurrent(initCurrent);
+          })(bodyId, frames, meta, code);
+        }
+      }
+
+      function setActiveFrame(idx) {
+        __activeFrameIndex = idx;
+        var nodes = document.querySelectorAll(".frame-item");
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].classList.toggle("active", i === idx);
+        }
+        var cur = frameForIndex(idx);
+        document.getElementById("frameStatus").textContent =
+          cur ? ("frame " + (idx + 1) + "/" + __frames.length) : "";
+        renderCodeForFrame(cur);
+      }
+
+      function renderStepMap() {
+        var raw = (typeof getLastStepMap === "function") ? getLastStepMap() : [];
+        var frames = flattenStepMap(raw);
+        __frames = frames;
+        __activeFrameIndex = -1;
+        var navMeta = document.getElementById("navMeta");
+        var navList = document.getElementById("navList");
+        navList.innerHTML = "";
+        if (!frames.length) {
+          navMeta.textContent = "No step map available.";
+          return;
+        }
+
+        var ctxCount = 0;
+        if (Array.isArray(raw) && raw.length && raw[0] && raw[0].frames) {
+          ctxCount = raw.length;
+        } else {
+          ctxCount = 1;
+        }
+        navMeta.textContent = "contexts=" + ctxCount + ", frames=" + frames.length;
+
+        for (var i = 0; i < frames.length; i++) {
+          var f = frames[i] || {};
+          var box = document.createElement("div");
+          box.className = "frame-item";
+          (function (idx) {
+            box.addEventListener("click", function () {
+              setActiveFrame(idx);
+            });
+          })(i);
+          var title = document.createElement("div");
+          title.className = "frame-title";
+          title.textContent =
+            "frame#" + (f.frame != null ? f.frame : "?") +
+            " | ctx=" + (f.ctx || "default") +
+            " | reason=" + (f.reason || "step");
+
+          var info = document.createElement("div");
+          info.className = "mono";
+          var p = f.primaryLoc || {};
+          info.textContent =
+            "seq: " + (f.seqStart != null ? f.seqStart : "?") + " -> " + (f.seqEnd != null ? f.seqEnd : "?") + "\n" +
+            "primary: " + (p.file || "?") + ":" + (p.line != null ? p.line : "?") + " " + (p.func || "") + "\n" +
+            "trigger: " + JSON.stringify(f.trigger || null);
+
+          box.appendChild(title);
+          box.appendChild(info);
+          navList.appendChild(box);
+        }
+        if (frames.length) {
+          setActiveFrame(0);
+        } else {
+          renderCodeForFrame(null);
+        }
+      }
+
+      function playCurrentTrace() {
+        try {
+          var text = document.getElementById("traceInput").value;
+          var events = parseDSTraceJSONL(text);
+          document.getElementById("av").innerHTML = "";
+          playDSTrace(document.getElementById("av"), events, {
+            debugRuntimeApi: false
+          });
+          renderStepMap();
+          var raw = (typeof getLastStepMap === "function") ? getLastStepMap() : [];
+          bindAutoTrackers(raw);
+          setStatus("Played " + events.length + " events. Auto code tracking bound per context.");
+        } catch (e) {
+          setStatus("Play failed: " + e.message);
+          alert(e.message);
+        }
+      }
+
+      document.getElementById("loadDefault").addEventListener("click", loadDefaultTrace);
+      document.getElementById("play").addEventListener("click", playCurrentTrace);
+      document.getElementById("showStepMap").addEventListener("click", renderStepMap);
+      document.getElementById("prevFrame").addEventListener("click", function () {
+        if (!__frames.length) return;
+        var next = __activeFrameIndex <= 0 ? 0 : __activeFrameIndex - 1;
+        setActiveFrame(next);
+      });
+      document.getElementById("nextFrame").addEventListener("click", function () {
+        if (!__frames.length) return;
+        var next = __activeFrameIndex < 0 ? 0 : Math.min(__frames.length - 1, __activeFrameIndex + 1);
+        setActiveFrame(next);
+      });
+
+      loadDefaultTrace();
+    </script>
+  </body>
+</html>
+
+

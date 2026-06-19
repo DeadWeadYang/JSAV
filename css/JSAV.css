@@ -580,7 +580,8 @@ a.jsavsettings:hover {
 }
 
 .jsavedgelabel {
-  background-color: inherit;
+  /* background-color: inherit; */
+  background-color: transparent;
   z-index: 700;
   position: absolute;
   display: inline-block;

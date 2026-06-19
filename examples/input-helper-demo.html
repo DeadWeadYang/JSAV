@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DSA Input Helper Demo</title>
+    <link rel="stylesheet" href="../css/dsa_visual_component.css" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+
+      main {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+        max-width: 1180px;
+      }
+
+      #submitLog {
+        border: 1px solid #d8dee9;
+        min-height: 240px;
+        padding: 12px;
+      }
+
+      #submitLog h2 {
+        font-size: 16px;
+        margin: 0 0 8px;
+      }
+
+      #submitLog pre {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-size: 12px;
+        overflow: auto;
+        padding: 10px;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="helper"></div>
+      <aside id="submitLog">
+        <h2>Submit Contract</h2>
+        <p>Click Generate Trace to see the payload a backend trace service should receive.</p>
+        <pre>{}</pre>
+      </aside>
+    </main>
+
+    <script src="../ext/dsa_algorithm_catalog.js"></script>
+    <script src="../ext/dsa_input_helper.js"></script>
+    <script>
+      var helperEl = document.getElementById("helper");
+      var logPre = document.querySelector("#submitLog pre");
+
+      DSAVisualInputHelper.mount(helperEl, {
+        algorithmId: "graph_dijkstra"
+      });
+
+      helperEl.addEventListener("dsa-input:submit", function (event) {
+        logPre.textContent = JSON.stringify({
+          algorithmId: event.detail.algorithmId,
+          template: event.detail.algorithm.template,
+          input: event.detail.input
+        }, null, 2);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+{"seq":1,"ctx":"dsu_case","ds":"tree","op":"init","obj":"U","args":{"nodes":[]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":47,"func":"DSU"}}
+{"seq":2,"ctx":"dsu_case","ds":"tree","op":"new_node","obj":"U","args":{"id":"t1","value":1,"color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":50,"func":"DSU"}}
+{"seq":3,"ctx":"dsu_case","ds":"tree","op":"add_root","obj":"U","args":{"id":"t1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":51,"func":"DSU"}}
+{"seq":4,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t1","note":"p=1,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":52,"func":"DSU"}}
+{"seq":5,"ctx":"dsu_case","ds":"tree","op":"new_node","obj":"U","args":{"id":"t2","value":2,"color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":50,"func":"DSU"}}
+{"seq":6,"ctx":"dsu_case","ds":"tree","op":"add_root","obj":"U","args":{"id":"t2"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":51,"func":"DSU"}}
+{"seq":7,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t2","note":"p=2,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":52,"func":"DSU"}}
+{"seq":8,"ctx":"dsu_case","ds":"tree","op":"new_node","obj":"U","args":{"id":"t3","value":3,"color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":50,"func":"DSU"}}
+{"seq":9,"ctx":"dsu_case","ds":"tree","op":"add_root","obj":"U","args":{"id":"t3"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":51,"func":"DSU"}}
+{"seq":10,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t3","note":"p=3,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":52,"func":"DSU"}}
+{"seq":11,"ctx":"dsu_case","ds":"tree","op":"new_node","obj":"U","args":{"id":"t4","value":4,"color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":50,"func":"DSU"}}
+{"seq":12,"ctx":"dsu_case","ds":"tree","op":"add_root","obj":"U","args":{"id":"t4"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":51,"func":"DSU"}}
+{"seq":13,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t4","note":"p=4,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":52,"func":"DSU"}}
+{"seq":14,"ctx":"dsu_case","ds":"tree","op":"new_node","obj":"U","args":{"id":"t5","value":5,"color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":50,"func":"DSU"}}
+{"seq":15,"ctx":"dsu_case","ds":"tree","op":"add_root","obj":"U","args":{"id":"t5"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":51,"func":"DSU"}}
+{"seq":16,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t5","note":"p=5,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":52,"func":"DSU"}}
+{"seq":17,"ctx":"dsu_case","ds":"tree","op":"new_node","obj":"U","args":{"id":"t6","value":6,"color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":50,"func":"DSU"}}
+{"seq":18,"ctx":"dsu_case","ds":"tree","op":"add_root","obj":"U","args":{"id":"t6"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":51,"func":"DSU"}}
+{"seq":19,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t6","note":"p=6,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":52,"func":"DSU"}}
+{"seq":20,"ctx":"dsu_case","ds":"tree","op":"new_node","obj":"U","args":{"id":"t7","value":7,"color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":50,"func":"DSU"}}
+{"seq":21,"ctx":"dsu_case","ds":"tree","op":"add_root","obj":"U","args":{"id":"t7"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":51,"func":"DSU"}}
+{"seq":22,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t7","note":"p=7,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":52,"func":"DSU"}}
+{"seq":23,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"DSU 初始化：7 个元素各自成为一个集合"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":55,"func":"DSU"}}
+{"seq":24,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t1"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":206,"func":"vis_focus_roots"}}
+{"seq":25,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t2"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":207,"func":"vis_focus_roots"}}
+{"seq":26,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"UnionByRank：比较代表元 1(rank=0) 和 2(rank=0)"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":141,"func":"UnionByRank"}}
+{"seq":27,"ctx":"dsu_case","ds":"tree","op":"remove_root","obj":"U","args":{"id":"t1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":224,"func":"vis_attach_root"}}
+{"seq":28,"ctx":"dsu_case","ds":"tree","op":"add_child","obj":"U","args":{"parent":"t2","child":"t1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":225,"func":"vis_attach_root"}}
+{"seq":29,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t1","note":"p=2,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":226,"func":"vis_attach_root"}}
+{"seq":30,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t2","note":"p=2,s=2,r=1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":227,"func":"vis_attach_root"}}
+{"seq":31,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"按秩合并：rank 较小的代表元 1 挂到 2 下，原 rank 相同所以新根 rank +1"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":151,"func":"UnionByRank"}}
+{"seq":32,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t1"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":212,"func":"vis_unfocus_roots"}}
+{"seq":33,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t2"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":213,"func":"vis_unfocus_roots"}}
+{"seq":34,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t3"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":206,"func":"vis_focus_roots"}}
+{"seq":35,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":207,"func":"vis_focus_roots"}}
+{"seq":36,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"UnionByRank：比较代表元 3(rank=0) 和 4(rank=0)"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":141,"func":"UnionByRank"}}
+{"seq":37,"ctx":"dsu_case","ds":"tree","op":"remove_root","obj":"U","args":{"id":"t3"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":224,"func":"vis_attach_root"}}
+{"seq":38,"ctx":"dsu_case","ds":"tree","op":"add_child","obj":"U","args":{"parent":"t4","child":"t3"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":225,"func":"vis_attach_root"}}
+{"seq":39,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t3","note":"p=4,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":226,"func":"vis_attach_root"}}
+{"seq":40,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t4","note":"p=4,s=2,r=1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":227,"func":"vis_attach_root"}}
+{"seq":41,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"按秩合并：rank 较小的代表元 3 挂到 4 下，原 rank 相同所以新根 rank +1"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":151,"func":"UnionByRank"}}
+{"seq":42,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t3"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":212,"func":"vis_unfocus_roots"}}
+{"seq":43,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":213,"func":"vis_unfocus_roots"}}
+{"seq":44,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t2"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":206,"func":"vis_focus_roots"}}
+{"seq":45,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":207,"func":"vis_focus_roots"}}
+{"seq":46,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"UnionByRank：比较代表元 2(rank=1) 和 4(rank=1)"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":141,"func":"UnionByRank"}}
+{"seq":47,"ctx":"dsu_case","ds":"tree","op":"remove_root","obj":"U","args":{"id":"t2"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":224,"func":"vis_attach_root"}}
+{"seq":48,"ctx":"dsu_case","ds":"tree","op":"add_child","obj":"U","args":{"parent":"t4","child":"t2"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":225,"func":"vis_attach_root"}}
+{"seq":49,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t2","note":"p=4,s=2,r=1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":226,"func":"vis_attach_root"}}
+{"seq":50,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t4","note":"p=4,s=4,r=2"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":227,"func":"vis_attach_root"}}
+{"seq":51,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"按秩合并：rank 较小的代表元 2 挂到 4 下，原 rank 相同所以新根 rank +1"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":151,"func":"UnionByRank"}}
+{"seq":52,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t2"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":212,"func":"vis_unfocus_roots"}}
+{"seq":53,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":213,"func":"vis_unfocus_roots"}}
+{"seq":54,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t5"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":206,"func":"vis_focus_roots"}}
+{"seq":55,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":207,"func":"vis_focus_roots"}}
+{"seq":56,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"UnionBySize：比较代表元 5(size=1) 和 6(size=1)"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":169,"func":"UnionBySize"}}
+{"seq":57,"ctx":"dsu_case","ds":"tree","op":"remove_root","obj":"U","args":{"id":"t5"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":224,"func":"vis_attach_root"}}
+{"seq":58,"ctx":"dsu_case","ds":"tree","op":"add_child","obj":"U","args":{"parent":"t6","child":"t5"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":225,"func":"vis_attach_root"}}
+{"seq":59,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t5","note":"p=6,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":226,"func":"vis_attach_root"}}
+{"seq":60,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t6","note":"p=6,s=2,r=1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":227,"func":"vis_attach_root"}}
+{"seq":61,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"按大小合并：较小集合代表元 5 挂到较大集合代表元 6 下"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":176,"func":"UnionBySize"}}
+{"seq":62,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t5"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":212,"func":"vis_unfocus_roots"}}
+{"seq":63,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":213,"func":"vis_unfocus_roots"}}
+{"seq":64,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":206,"func":"vis_focus_roots"}}
+{"seq":65,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t7"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":207,"func":"vis_focus_roots"}}
+{"seq":66,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"UnionBySize：比较代表元 6(size=2) 和 7(size=1)"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":169,"func":"UnionBySize"}}
+{"seq":67,"ctx":"dsu_case","ds":"tree","op":"remove_root","obj":"U","args":{"id":"t7"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":224,"func":"vis_attach_root"}}
+{"seq":68,"ctx":"dsu_case","ds":"tree","op":"add_child","obj":"U","args":{"parent":"t6","child":"t7"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":225,"func":"vis_attach_root"}}
+{"seq":69,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t7","note":"p=6,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":226,"func":"vis_attach_root"}}
+{"seq":70,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t6","note":"p=6,s=3,r=1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":227,"func":"vis_attach_root"}}
+{"seq":71,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"按大小合并：较小集合代表元 7 挂到较大集合代表元 6 下"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":176,"func":"UnionBySize"}}
+{"seq":72,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t7"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":212,"func":"vis_unfocus_roots"}}
+{"seq":73,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":213,"func":"vis_unfocus_roots"}}
+{"seq":74,"ctx":"dsu_case","ds":"tree","op":"add_child","obj":"U","args":{"parent":"t4","child":"t1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":218,"func":"vis_reparent_node"}}
+{"seq":75,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t1","note":"p=4,s=1,r=0"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":219,"func":"vis_reparent_node"}}
+{"seq":76,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Find(1) 路径压缩：原父节点 2 改为直接指向代表元 4"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":76,"func":"FindRecursive"}}
+{"seq":77,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":206,"func":"vis_focus_roots"}}
+{"seq":78,"ctx":"dsu_case","ds":"tree","op":"mark","obj":"U","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":207,"func":"vis_focus_roots"}}
+{"seq":79,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"UnionBySize：比较代表元 4(size=4) 和 6(size=3)"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":169,"func":"UnionBySize"}}
+{"seq":80,"ctx":"dsu_case","ds":"tree","op":"remove_root","obj":"U","args":{"id":"t6"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":224,"func":"vis_attach_root"}}
+{"seq":81,"ctx":"dsu_case","ds":"tree","op":"add_child","obj":"U","args":{"parent":"t4","child":"t6"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":225,"func":"vis_attach_root"}}
+{"seq":82,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t6","note":"p=4,s=3,r=1"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":226,"func":"vis_attach_root"}}
+{"seq":83,"ctx":"dsu_case","ds":"tree","op":"set_note","obj":"U","args":{"id":"t4","note":"p=4,s=7,r=2"},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":227,"func":"vis_attach_root"}}
+{"seq":84,"ctx":"dsu_case","ds":"meta","op":"msg","obj":"_","args":{"text":"按大小合并：较小集合代表元 6 挂到较大集合代表元 4 下"},"step":true,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":176,"func":"UnionBySize"}}
+{"seq":85,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":212,"func":"vis_unfocus_roots"}}
+{"seq":86,"ctx":"dsu_case","ds":"tree","op":"unmark","obj":"U","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/disjoint_set_union.hpp","line":213,"func":"vis_unfocus_roots"}}

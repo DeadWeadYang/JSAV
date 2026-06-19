@@ -1,0 +1,29 @@
+{"seq":1,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort 处理区间 [0,7)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":2,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition：在区间 [0,7) 选择 pivot 下标 0"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":3,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 交换两侧错位元素：0 <-> 6"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":4,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 交换两侧错位元素：2 <-> 4"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":5,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 完成：分割点为 0，左侧不大于 pivot，右侧不小于 pivot"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":6,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort：分治为左区间 [0,0) 和右区间 [0,7)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":7,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort 处理区间 [0,4)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":8,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition：在区间 [0,4) 选择 pivot 下标 0"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":9,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 交换两侧错位元素：0 <-> 3"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":10,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 完成：分割点为 0，左侧不大于 pivot，右侧不小于 pivot"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":11,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort：分治为左区间 [0,0) 和右区间 [0,4)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":12,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort 处理区间 [0,3)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":13,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition：在区间 [0,3) 选择 pivot 下标 0"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":14,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 交换两侧错位元素：0 <-> 2"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":15,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 完成：分割点为 0，左侧不大于 pivot，右侧不小于 pivot"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":16,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort：分治为左区间 [0,0) 和右区间 [0,3)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":17,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort 处理区间 [0,2)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":18,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition：在区间 [0,2) 选择 pivot 下标 0"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":19,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 完成：分割点为 0，左侧不大于 pivot，右侧不小于 pivot"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":20,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort：分治为左区间 [0,0) 和右区间 [0,2)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":21,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort 处理区间 [0,3)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":22,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition：在区间 [0,3) 选择 pivot 下标 0"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":23,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 交换两侧错位元素：0 <-> 1"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":24,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 完成：分割点为 0，左侧不大于 pivot，右侧不小于 pivot"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":25,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort：分治为左区间 [0,0) 和右区间 [0,3)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":26,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort 处理区间 [0,2)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":27,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition：在区间 [0,2) 选择 pivot 下标 0"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":28,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"Partition 完成：分割点为 0，左侧不大于 pivot，右侧不小于 pivot"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}
+{"seq":29,"ctx":"sorting_quick","ds":"meta","op":"msg","obj":"_","args":{"text":"QuickSort：分治为左区间 [0,0) 和右区间 [0,2)"},"step":true,"loc":{"file":"CPP-DSA/sorting/sorting_vis.hpp","line":155,"func":"Step"}}

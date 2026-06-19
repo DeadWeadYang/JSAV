@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DSA Trace Showcase Static</title>
+    <link rel="stylesheet" href="../css/JSAV.css" type="text/css" />
+    <style>
+      body {
+        font-family: Consolas, "Courier New", monospace;
+        margin: 12px;
+      }
+      #av {
+        position: relative;
+        min-height: 720px;
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      .dstrace-context-panel {
+        border: 1px solid #e5e7eb;
+        margin: 12px 0;
+        padding: 8px;
+      }
+      .dstrace-context-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .jsavcounter {
+        position: absolute;
+        top: 10px;
+      }
+      .hint {
+        color: #64748b;
+        margin: 6px 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>DSA Trace Showcase Static</h2>
+    <div class="hint">静态 JS 由 runtime API log 导出，包含 graph/tree/sorting 和 KMP 字符串匹配，适合检查“部署为纯静态资源”时的播放效果。</div>
+    <div id="av"></div>
+
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/jquery-ui.min.js"></script>
+    <script src="../lib/jquery.transit.js"></script>
+    <script src="../lib/raphael.js"></script>
+    <script src="../lib/dagre.min.js"></script>
+    <script src="../build/JSAV.js"></script>
+    <script src="../ext/bug_fix.js"></script>
+    <script src="../ext/binary_tree_rotation.js"></script>
+    <script src="./trace-showcase-static.js"></script>
+  </body>
+</html>

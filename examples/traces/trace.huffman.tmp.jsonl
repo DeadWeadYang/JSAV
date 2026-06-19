@@ -1,0 +1,87 @@
+{"seq":1,"ctx":"huffman_case","ds":"tree","op":"init","obj":"H","args":{"nodes":[]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":99,"func":"build"}}
+{"seq":2,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman 构建开始：6 个权值各自作为一棵叶子树"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":101,"func":"build"}}
+{"seq":3,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t1","value":"L1:5","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":108,"func":"build"}}
+{"seq":4,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t1"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":109,"func":"build"}}
+{"seq":5,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"加入叶子：label=1, w=5"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":111,"func":"build"}}
+{"seq":6,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t2","value":"L2:9","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":108,"func":"build"}}
+{"seq":7,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t2"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":109,"func":"build"}}
+{"seq":8,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"加入叶子：label=2, w=9"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":111,"func":"build"}}
+{"seq":9,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t3","value":"L3:12","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":108,"func":"build"}}
+{"seq":10,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t3"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":109,"func":"build"}}
+{"seq":11,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"加入叶子：label=3, w=12"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":111,"func":"build"}}
+{"seq":12,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t4","value":"L4:13","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":108,"func":"build"}}
+{"seq":13,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t4"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":109,"func":"build"}}
+{"seq":14,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"加入叶子：label=4, w=13"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":111,"func":"build"}}
+{"seq":15,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t5","value":"L5:16","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":108,"func":"build"}}
+{"seq":16,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t5"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":109,"func":"build"}}
+{"seq":17,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"加入叶子：label=5, w=16"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":111,"func":"build"}}
+{"seq":18,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t6","value":"L6:45","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":108,"func":"build"}}
+{"seq":19,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t6"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":109,"func":"build"}}
+{"seq":20,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"加入叶子：label=6, w=45"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":111,"func":"build"}}
+{"seq":21,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：取出当前权值最小的两棵树，权值分别为 5 和 9"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":121,"func":"build"}}
+{"seq":22,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t1"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":123,"func":"build"}}
+{"seq":23,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t2"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":124,"func":"build"}}
+{"seq":24,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t7","value":"#:14","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":130,"func":"build"}}
+{"seq":25,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：创建父节点，权值为两者之和 14"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":132,"func":"build"}}
+{"seq":26,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t1"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":138,"func":"build"}}
+{"seq":27,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t2"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":139,"func":"build"}}
+{"seq":28,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t7","child":"t1"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":140,"func":"build"}}
+{"seq":29,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t7","child":"t2"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":141,"func":"build"}}
+{"seq":30,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t7"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":142,"func":"build"}}
+{"seq":31,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t1"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":143,"func":"build"}}
+{"seq":32,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t2"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":144,"func":"build"}}
+{"seq":33,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：两棵子树挂到新父节点下，新树放回森林"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":146,"func":"build"}}
+{"seq":34,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：取出当前权值最小的两棵树，权值分别为 12 和 13"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":121,"func":"build"}}
+{"seq":35,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t3"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":123,"func":"build"}}
+{"seq":36,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":124,"func":"build"}}
+{"seq":37,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t8","value":"#:25","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":130,"func":"build"}}
+{"seq":38,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：创建父节点，权值为两者之和 25"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":132,"func":"build"}}
+{"seq":39,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t3"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":138,"func":"build"}}
+{"seq":40,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t4"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":139,"func":"build"}}
+{"seq":41,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t8","child":"t3"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":140,"func":"build"}}
+{"seq":42,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t8","child":"t4"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":141,"func":"build"}}
+{"seq":43,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t8"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":142,"func":"build"}}
+{"seq":44,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t3"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":143,"func":"build"}}
+{"seq":45,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t4"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":144,"func":"build"}}
+{"seq":46,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：两棵子树挂到新父节点下，新树放回森林"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":146,"func":"build"}}
+{"seq":47,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：取出当前权值最小的两棵树，权值分别为 14 和 16"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":121,"func":"build"}}
+{"seq":48,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t7"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":123,"func":"build"}}
+{"seq":49,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t5"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":124,"func":"build"}}
+{"seq":50,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t9","value":"#:30","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":130,"func":"build"}}
+{"seq":51,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：创建父节点，权值为两者之和 30"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":132,"func":"build"}}
+{"seq":52,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t7"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":138,"func":"build"}}
+{"seq":53,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t5"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":139,"func":"build"}}
+{"seq":54,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t9","child":"t7"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":140,"func":"build"}}
+{"seq":55,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t9","child":"t5"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":141,"func":"build"}}
+{"seq":56,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t9"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":142,"func":"build"}}
+{"seq":57,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t7"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":143,"func":"build"}}
+{"seq":58,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t5"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":144,"func":"build"}}
+{"seq":59,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：两棵子树挂到新父节点下，新树放回森林"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":146,"func":"build"}}
+{"seq":60,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：取出当前权值最小的两棵树，权值分别为 25 和 30"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":121,"func":"build"}}
+{"seq":61,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t8"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":123,"func":"build"}}
+{"seq":62,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t9"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":124,"func":"build"}}
+{"seq":63,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t10","value":"#:55","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":130,"func":"build"}}
+{"seq":64,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：创建父节点，权值为两者之和 55"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":132,"func":"build"}}
+{"seq":65,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t8"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":138,"func":"build"}}
+{"seq":66,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t9"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":139,"func":"build"}}
+{"seq":67,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t10","child":"t8"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":140,"func":"build"}}
+{"seq":68,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t10","child":"t9"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":141,"func":"build"}}
+{"seq":69,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t10"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":142,"func":"build"}}
+{"seq":70,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t8"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":143,"func":"build"}}
+{"seq":71,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t9"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":144,"func":"build"}}
+{"seq":72,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：两棵子树挂到新父节点下，新树放回森林"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":146,"func":"build"}}
+{"seq":73,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：取出当前权值最小的两棵树，权值分别为 45 和 55"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":121,"func":"build"}}
+{"seq":74,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":123,"func":"build"}}
+{"seq":75,"ctx":"huffman_case","ds":"tree","op":"mark","obj":"H","args":{"ids":["t10"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":124,"func":"build"}}
+{"seq":76,"ctx":"huffman_case","ds":"tree","op":"new_node","obj":"H","args":{"id":"t11","value":"#:100","color":"black"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":130,"func":"build"}}
+{"seq":77,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：创建父节点，权值为两者之和 100"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":132,"func":"build"}}
+{"seq":78,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t6"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":138,"func":"build"}}
+{"seq":79,"ctx":"huffman_case","ds":"tree","op":"remove_root","obj":"H","args":{"id":"t10"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":139,"func":"build"}}
+{"seq":80,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t11","child":"t6"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":140,"func":"build"}}
+{"seq":81,"ctx":"huffman_case","ds":"tree","op":"add_child","obj":"H","args":{"parent":"t11","child":"t10"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":141,"func":"build"}}
+{"seq":82,"ctx":"huffman_case","ds":"tree","op":"add_root","obj":"H","args":{"id":"t11"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":142,"func":"build"}}
+{"seq":83,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t6"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":143,"func":"build"}}
+{"seq":84,"ctx":"huffman_case","ds":"tree","op":"unmark","obj":"H","args":{"ids":["t10"]},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":144,"func":"build"}}
+{"seq":85,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman：两棵子树挂到新父节点下，新树放回森林"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":146,"func":"build"}}
+{"seq":86,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman 构建结束：森林只剩最终根，WPL=224"},"step":true,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":161,"func":"build"}}
+{"seq":87,"ctx":"huffman_case","ds":"meta","op":"msg","obj":"_","args":{"text":"Huffman 编码生成完成，编码数=6"},"step":false,"loc":{"file":"CPP-DSA/tree/binary_tree/Huffman_tree.hpp","line":167,"func":"build"}}

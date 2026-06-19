@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Graph Trace Static Player</title>
+    <link rel="stylesheet" href="../css/JSAV.css" type="text/css" />
+    <style>
+      body {
+        font-family: Consolas, "Courier New", monospace;
+        margin: 12px;
+      }
+      #av {
+        position: relative;
+        min-height: 520px;
+        border: 1px solid #ddd;
+      }
+      .dstrace-context-panel {
+        border: 1px solid #eee;
+        margin: 10px 0;
+        padding: 8px;
+      }
+      .dstrace-context-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .jsavcounter {
+        position: absolute;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Graph Trace Static Player</h2>
+    <p style="color:#666">Static snapshot (exported from runtime player). For lower crossings in runtime demo, use `layout=layered` there.</p>
+    <div id="av"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../lib/jquery.transit.js"></script>
+    <script src="../lib/raphael.js"></script>
+    <script src="../lib/dagre.min.js"></script>
+    <script src="../build/JSAV.js"></script>
+    <script src="../ext/bug_fix.js"></script>
+    <script src="../ext/binary_tree_rotation.js"></script>
+    <script src="./graph-trace-static.js"></script>
+  </body>
+</html>

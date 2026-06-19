@@ -58,6 +58,9 @@
       g.addEdge(e, a);
       g.addEdge(d, e);
       g.addEdge(d, f);
+      g.getEdge(a,b).label("a");
+      g.getEdge(a,b).weight("6");
+g.getEdge(a,b).highlight();
       return g;
      };
     var l2 = jsav.label("Default automatic graph layout")

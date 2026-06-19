@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DSA Visual Full Chain Demo</title>
+    <link rel="stylesheet" href="../css/dsa_visual_component.css" />
+    <style>
+      body {
+        background: #f6f7f9;
+        color: #1f2937;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      .full-chain {
+        display: grid;
+        gap: 14px;
+        min-height: 100vh;
+        padding: 14px;
+      }
+
+      .full-chain__header,
+      .full-chain__panel,
+      .full-chain__status {
+        background: #ffffff;
+        border: 1px solid #d8dee9;
+      }
+
+      .full-chain__header {
+        align-items: center;
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        padding: 10px 12px;
+      }
+
+      .full-chain__title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .full-chain__badge {
+        border: 1px solid #cbd5e1;
+        border-radius: 999px;
+        color: #475569;
+        font-size: 12px;
+        line-height: 1;
+        padding: 6px 10px;
+        white-space: nowrap;
+      }
+
+      .full-chain__badge.is-busy {
+        background: #eff6ff;
+        border-color: #93c5fd;
+        color: #1d4ed8;
+      }
+
+      .full-chain__badge.is-error {
+        background: #fff1f2;
+        border-color: #fecdd3;
+        color: #9f1239;
+      }
+
+      .full-chain__main {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: minmax(340px, 430px) minmax(0, 1fr);
+      }
+
+      .full-chain__panel {
+        min-width: 0;
+        padding: 10px;
+      }
+
+      .full-chain__panel-title {
+        align-items: center;
+        border-bottom: 1px solid #e5e7eb;
+        display: flex;
+        font-size: 14px;
+        font-weight: 700;
+        justify-content: space-between;
+        margin: 0 0 10px;
+        min-height: 30px;
+      }
+
+      .full-chain__player-placeholder {
+        align-items: center;
+        border: 1px dashed #cbd5e1;
+        color: #64748b;
+        display: flex;
+        font-size: 13px;
+        justify-content: center;
+        min-height: 680px;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .full-chain__status {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+        padding: 10px;
+      }
+
+      .full-chain__log-title,
+      .full-chain__stats-title {
+        color: #334155;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .full-chain__log {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 12px;
+        margin: 0;
+        max-height: 130px;
+        overflow: auto;
+        padding: 9px;
+        white-space: pre-wrap;
+      }
+
+      .full-chain__stats {
+        color: #475569;
+        display: grid;
+        font-size: 12px;
+        gap: 5px;
+      }
+
+      .full-chain__stat-row {
+        display: flex;
+        gap: 8px;
+        justify-content: space-between;
+      }
+
+      .full-chain__stat-row strong {
+        color: #111827;
+        font-weight: 700;
+      }
+
+      @media (max-width: 1100px) {
+        .full-chain__main,
+        .full-chain__status {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="full-chain">
+      <header class="full-chain__header">
+        <div class="full-chain__title">DSA Visual Full Chain</div>
+        <div id="chainBadge" class="full-chain__badge">Ready</div>
+      </header>
+
+      <main class="full-chain__main">
+        <section class="full-chain__panel">
+          <div class="full-chain__panel-title">Input</div>
+          <div id="inputHelper"></div>
+        </section>
+
+        <section class="full-chain__panel">
+          <div class="full-chain__panel-title">Animation + Code Trace</div>
+          <div id="playerHost">
+            <div class="full-chain__player-placeholder">Generate a trace to load the player.</div>
+          </div>
+        </section>
+      </main>
+
+      <section class="full-chain__status">
+        <div>
+          <div class="full-chain__log-title">Service Log</div>
+          <pre id="serviceLog" class="full-chain__log">No request yet.</pre>
+        </div>
+        <div>
+          <div class="full-chain__stats-title">Trace Stats</div>
+          <div id="traceStats" class="full-chain__stats">
+            <div class="full-chain__stat-row"><span>Algorithm</span><strong>-</strong></div>
+            <div class="full-chain__stat-row"><span>Template</span><strong>-</strong></div>
+            <div class="full-chain__stat-row"><span>Events</span><strong>-</strong></div>
+            <div class="full-chain__stat-row"><span>Steps</span><strong>-</strong></div>
+            <div class="full-chain__stat-row"><span>Sync</span><strong>-</strong></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../ext/dsa_algorithm_catalog.js"></script>
+    <script src="../ext/dsa_input_helper.js"></script>
+    <script src="../ext/dsa_visual_component.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        var helperEl = document.getElementById("inputHelper");
+        var playerHost = document.getElementById("playerHost");
+        var badge = document.getElementById("chainBadge");
+        var serviceLog = document.getElementById("serviceLog");
+        var traceStats = document.getElementById("traceStats");
+        var currentPlayer = null;
+
+        function setBadge(text, type) {
+          badge.textContent = text;
+          badge.classList.toggle("is-busy", type === "busy");
+          badge.classList.toggle("is-error", type === "error");
+        }
+
+        function setBusy(busy) {
+          var buttons = helperEl.querySelectorAll("button, input, select, textarea");
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = busy;
+          }
+        }
+
+        function renderStats(result) {
+          var stats = result.stats || {};
+          var rows = [
+            ["Algorithm", result.algorithmId || "-"],
+            ["Template", result.template || "-"],
+            ["Events", stats.events == null ? "-" : stats.events],
+            ["Steps", stats.steps == null ? "-" : stats.steps],
+            ["Sync", stats.sync == null ? "-" : stats.sync]
+          ];
+          traceStats.innerHTML = rows.map(function (row) {
+            return "<div class='full-chain__stat-row'><span>" +
+              row[0] +
+              "</span><strong>" +
+              String(row[1]).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") +
+              "</strong></div>";
+          }).join("");
+        }
+
+        function log(text) {
+          serviceLog.textContent = text;
+        }
+
+        function mountTrace(result) {
+          playerHost.innerHTML = "";
+          currentPlayer = DSAVisual.mount(playerHost, {
+            traceText: result.trace,
+            assetsBase: "../",
+            sourceBase: "../../",
+            codeTrace: true,
+            graphLayout: "auto_freeze",
+            animationSpeed: 120,
+            height: 680,
+            title: result.algorithmId || "Generated Trace"
+          });
+          return currentPlayer.ready;
+        }
+
+        DSAVisualInputHelper.mount(helperEl, {
+          algorithmId: "graph_dijkstra"
+        });
+
+        helperEl.addEventListener("dsa-input:submit", function (event) {
+          var payload = {
+            algorithmId: event.detail.algorithmId,
+            input: event.detail.input
+          };
+          setBusy(true);
+          setBadge("Generating", "busy");
+          log("POST /api/traces\n" + JSON.stringify(payload, null, 2));
+
+          fetch("/api/traces", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          })
+            .then(function (res) {
+              return res.json().then(function (body) {
+                if (!res.ok || !body.ok) {
+                  var err = new Error((body.error && body.error.message) || ("HTTP " + res.status));
+                  err.code = body.error && body.error.code;
+                  throw err;
+                }
+                return body;
+              });
+            })
+            .then(function (result) {
+              renderStats(result);
+              log("Trace generated.\n" + JSON.stringify({
+                algorithmId: result.algorithmId,
+                template: result.template,
+                stats: result.stats
+              }, null, 2));
+              return mountTrace(result);
+            })
+            .then(function () {
+              setBadge("Loaded", "");
+            })
+            .catch(function (err) {
+              setBadge("Error", "error");
+              log((err.code ? err.code + "\n" : "") + err.message);
+            })
+            .then(function () {
+              setBusy(false);
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>

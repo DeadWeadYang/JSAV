@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DSA Visual Component Embed Demo</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+
+      main {
+        margin: 0 auto;
+        max-width: 1120px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin: 0 0 8px;
+      }
+
+      .intro {
+        color: #64748b;
+        line-height: 1.5;
+        margin: 0 0 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>DSA Visual Component</h1>
+      <p class="intro">
+        This page uses the embeddable component entry. A host site only needs the component script and a JSONL trace source.
+      </p>
+
+      <dsa-trace-player
+        title="Showcase Trace"
+        src="./traces/trace.showcase.tmp.jsonl"
+        assets-base="../"
+        graph-layout="auto_freeze"
+        animation-speed="150"
+        height="720"
+        toolbar="true">
+      </dsa-trace-player>
+    </main>
+
+    <script src="../ext/dsa_visual_component.js"></script>
+  </body>
+</html>
+

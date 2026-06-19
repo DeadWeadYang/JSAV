@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>BTree Trace Player (Minimal)</title>
+    <link rel="stylesheet" href="../css/JSAV.css" type="text/css" />
+    <style>
+      body {
+        font-family: Consolas, "Courier New", monospace;
+        margin: 12px;
+      }
+      #toolbar {
+        margin-bottom: 10px;
+      }
+      #traceInput {
+        width: 100%;
+        height: 220px;
+        box-sizing: border-box;
+      }
+      #av {
+        position: relative;
+        margin-top: 10px;
+        min-height: 520px;
+        border: 1px solid #ddd;
+      }
+      .dstrace-context-panel {
+        border: 1px solid #eee;
+        margin: 10px 0;
+        padding: 8px;
+      }
+      .dstrace-context-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .jsavcounter {
+        position: absolute;
+        top: 10px;
+      }
+      #status {
+        color: #444;
+        margin-left: 8px;
+      }
+      button {
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>BTree Trace Player (Minimal)</h2>
+    <div id="toolbar">
+      <button id="loadDefault">Load traces/trace.btree.tmp.jsonl</button>
+      <button id="play">Play</button>
+      <span id="status"></span>
+    </div>
+    <textarea id="traceInput" placeholder="Paste JSONL trace here..."></textarea>
+    <div id="av">
+      <div class="jsavcontrols"></div>
+      <span class="jsavcounter"></span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../lib/jquery.transit.js"></script>
+    <script src="../lib/raphael.js"></script>
+    <script src="../build/JSAV.js"></script>
+    <script src="../ext/bug_fix.js"></script>
+    <script src="../ext/binary_tree_rotation.js"></script>
+    <script src="../ext/ds_trace_player.js"></script>
+    <script>
+      var DEFAULT_TRACE_PATH = "./traces/trace.btree.tmp.jsonl";
+
+      function setStatus(msg) {
+        document.getElementById("status").textContent = msg || "";
+      }
+
+      function loadDefaultTrace() {
+        setStatus("Loading...");
+        return fetch(DEFAULT_TRACE_PATH)
+          .then(function (res) {
+            if (!res.ok) {
+              throw new Error("HTTP " + res.status + " when loading " + DEFAULT_TRACE_PATH);
+            }
+            return res.text();
+          })
+          .then(function (text) {
+            document.getElementById("traceInput").value = text;
+            setStatus("Loaded default trace.");
+          })
+          .catch(function (err) {
+            setStatus("Load failed: " + err.message);
+          });
+      }
+
+      function playCurrentTrace() {
+        try {
+          var text = document.getElementById("traceInput").value;
+          var events = parseDSTraceJSONL(text);
+          document.getElementById("av").innerHTML = "";
+          playDSTrace(document.getElementById("av"), events);
+          setStatus("Played " + events.length + " events.");
+        } catch (e) {
+          setStatus("Play failed: " + e.message);
+          alert(e.message);
+        }
+      }
+
+      document.getElementById("loadDefault").addEventListener("click", loadDefaultTrace);
+      document.getElementById("play").addEventListener("click", playCurrentTrace);
+
+      loadDefaultTrace();
+    </script>
+  </body>
+</html>
+
+
