@@ -3,8 +3,14 @@
 #Mac stuff
 .DS_Store
 
-#build directory
-build
+# Build output.
+# DSA Visual's dist packaging consumes build/JSAV.js directly, so keep the
+# browser-ready JSAV artifacts in this fork while still ignoring other build
+# scratch files.
+build/*
+!build/
+!build/JSAV.js
+!build/JSAV-min.js
 
 #Eclipse settings
 .project
